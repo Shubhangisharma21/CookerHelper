@@ -142,7 +142,7 @@ def download_pdf():
 
 @app.route('/health', methods=['GET'])
 def health():
-    return jsonify({"status": "ok"})
+    return jsonify({"status": "ok"})  #natak kara lo bas
 
 if __name__ == '__main__':
     app.run(debug=True, port=5001)
