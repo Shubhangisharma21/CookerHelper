@@ -62,7 +62,7 @@ function App() {
         currentView={currentView}
         setCurrentView={setCurrentView}
         isAuthenticated={authState.isAuthenticated}
-        user={authState.user}
+        user={authState.user}      //lalala
         onLogout={handleLogout}
       />
       <main>
