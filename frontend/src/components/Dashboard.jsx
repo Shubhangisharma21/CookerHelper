@@ -57,11 +57,11 @@ const Dashboard = ({ setCurrentView, user }) => {
           <div className="text-center mb-16">
             <h1 className="text-5xl lg:text-6xl font-black mb-6 tracking-tight" style={{color: '#2C3A47'}}>
               Welcome back, <span style={{color: '#FFB085'}}>{user?.name}</span>
-            </h1>
+        </h1>
             <p className="text-2xl font-medium max-w-3xl mx-auto leading-relaxed" style={{color: '#A0522D'}}>
               Your culinary command center is ready. Let's create something amazing today.
             </p>
-          </div>
+      </div>
 
           {/* Stats Grid */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
@@ -116,8 +116,8 @@ const Dashboard = ({ setCurrentView, user }) => {
                   <div className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-110"
                        style={{backgroundColor: action.bgColor}}>
                     <action.icon className="h-8 w-8" style={{color: action.color}} />
-                  </div>
-                  
+        </div>
+
                   <h3 className="text-2xl font-black mb-3" style={{color: '#2C3A47'}}>
                     {action.title}
                   </h3>
@@ -130,7 +130,7 @@ const Dashboard = ({ setCurrentView, user }) => {
                        style={{color: action.color}}>
                     Get Started →
                   </div>
-                </button>
+            </button>
               ))}
             </div>
           </div>
@@ -170,17 +170,17 @@ const Dashboard = ({ setCurrentView, user }) => {
                   </div>
                   <h3 className="text-xl font-bold mb-2" style={{color: '#2C3A47'}}>Expert Level</h3>
                   <p style={{color: '#A0522D'}}>Professional recipes at your fingertips</p>
-                </div>
+          </div>
                 
                 <div className="text-center">
                   <div className="w-16 h-16 rounded-2xl mx-auto mb-4 flex items-center justify-center"
                        style={{backgroundColor: 'rgba(142, 182, 149, 0.2)'}}>
                     <Users className="h-8 w-8" style={{color: '#8EB695'}} />
-                  </div>
+        </div>
                   <h3 className="text-xl font-bold mb-2" style={{color: '#2C3A47'}}>Community</h3>
                   <p style={{color: '#A0522D'}}>Join thousands of passionate cooks</p>
-                </div>
-                
+      </div>
+
                 <div className="text-center">
                   <div className="w-16 h-16 rounded-2xl mx-auto mb-4 flex items-center justify-center"
                        style={{backgroundColor: 'rgba(239, 154, 154, 0.2)'}}>
@@ -189,9 +189,9 @@ const Dashboard = ({ setCurrentView, user }) => {
                   <h3 className="text-xl font-bold mb-2" style={{color: '#2C3A47'}}>Time Saved</h3>
                   <p style={{color: '#A0522D'}}>Efficient planning saves hours weekly</p>
                 </div>
-              </div>
             </div>
-          </div>
+            </div>
+            </div>
         </div>
       </div>
     </div>

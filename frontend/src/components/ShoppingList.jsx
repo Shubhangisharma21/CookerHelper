@@ -97,7 +97,7 @@ const ShoppingList = ({ mealPlans = [] }) => {
               <h1 className="text-5xl font-bold bg-gradient-to-r from-cinnamon to-charcoal bg-clip-text text-transparent">
                 Shopping List
               </h1>
-            </div>
+      </div>
           </div>
           <p className="text-xl text-charcoal/80 max-w-2xl mx-auto leading-relaxed">
             Auto-generated from your weekly meal plan
@@ -108,7 +108,7 @@ const ShoppingList = ({ mealPlans = [] }) => {
           <div className="bg-white/80 backdrop-blur-lg rounded-3xl shadow-xl p-16 text-center border border-peachy/20">
             <div className="bg-cream/60 rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-6">
               <Package className="h-12 w-12 text-cinnamon/60" />
-            </div>
+        </div>
             <h3 className="text-3xl font-bold text-charcoal mb-4">No Items Yet</h3>
             <p className="text-xl text-charcoal/70 mb-6 leading-relaxed">
               Add recipes to your meal planner to automatically generate your shopping list!
@@ -117,7 +117,7 @@ const ShoppingList = ({ mealPlans = [] }) => {
               <p className="text-lg text-charcoal font-medium">
                 💡 <strong>Tip:</strong> Go to Meal Planner → Add recipes to your week → Come back here to see your shopping list!
               </p>
-            </div>
+          </div>
           </div>
         ) : (
           <>
@@ -127,12 +127,12 @@ const ShoppingList = ({ mealPlans = [] }) => {
                 <div className="flex items-center gap-3">
                   <ListChecks className="h-6 w-6 text-cinnamon" />
                   <h3 className="text-2xl font-bold text-charcoal">Shopping Progress</h3>
-                </div>
+          </div>
                 <div className="text-lg text-charcoal/70 font-medium">
                   {checkedCount} of {totalItems} items completed
-                </div>
-              </div>
-              
+        </div>
+      </div>
+
               <div className="relative">
                 <div className="w-full bg-cream/60 rounded-full h-6 border border-peachy/20">
                   <div
@@ -145,25 +145,25 @@ const ShoppingList = ({ mealPlans = [] }) => {
                       </span>
                     )}
                   </div>
-                </div>
+      </div>
                 {progress <= 15 && (
                   <div className="absolute top-0 left-2 text-charcoal/70 text-sm font-medium leading-6">
                     {Math.round(progress)}%
-                  </div>
+            </div>
                 )}
-              </div>
+            </div>
             </div>
 
-            {/* Shopping List by Category */}
+      {/* Shopping List by Category */}
             <div className="space-y-8">
-              {categories.map(category => {
-                const categoryItems = groupedItems[category] || [];
-                if (categoryItems.length === 0) return null;
+        {categories.map(category => {
+          const categoryItems = groupedItems[category] || [];
+          if (categoryItems.length === 0) return null;
                 
                 const categoryColor = categoryColors[category];
                 const completedInCategory = categoryItems.filter(item => item.checked).length;
                 
-                return (
+          return (
                   <div key={category} className="bg-white/80 backdrop-blur-lg rounded-3xl shadow-xl overflow-hidden border border-peachy/20">
                     {/* Category Header */}
                     <div className={`bg-gradient-to-r from-${categoryColor}/20 to-${categoryColor}/10 border-b border-${categoryColor}/20 px-8 py-6`}>
@@ -187,14 +187,14 @@ const ShoppingList = ({ mealPlans = [] }) => {
                           </div>
                         </div>
                       </div>
-                    </div>
+              </div>
 
                     {/* Category Items */}
                     <div className="p-8">
                       <div className="space-y-4">
                         {categoryItems.map((item) => (
-                          <div
-                            key={item.id}
+                  <div
+                    key={item.id}
                             className={`flex items-center justify-between p-6 rounded-2xl border-2 transition-all duration-300 group cursor-pointer ${
                               item.checked
                                 ? `bg-${categoryColor}/10 border-${categoryColor}/30 opacity-70`
@@ -204,15 +204,15 @@ const ShoppingList = ({ mealPlans = [] }) => {
                           >
                             <div className="flex items-center gap-6">
                               <div className="relative">
-                                <button
+                      <button
                                   className={`w-8 h-8 rounded-full border-2 transition-all duration-200 flex items-center justify-center ${
-                                    item.checked
+                          item.checked
                                       ? `bg-${categoryColor} border-${categoryColor} text-white`
                                       : `border-${categoryColor}/40 hover:border-${categoryColor} group-hover:bg-${categoryColor}/10`
-                                  }`}
-                                >
+                        }`}
+                      >
                                   {item.checked && <Check className="h-5 w-5" />}
-                                </button>
+                      </button>
                               </div>
                               <div>
                                 <h4 className={`text-xl font-bold transition-all ${
@@ -257,7 +257,7 @@ const ShoppingList = ({ mealPlans = [] }) => {
                   <div className="p-6 bg-cream/40 rounded-2xl border border-sage/20">
                     <div className="text-3xl font-bold text-sage mb-2">{checkedCount}</div>
                     <div className="text-charcoal/70 font-medium">Completed</div>
-                  </div>
+                    </div>
                   <div className="p-6 bg-cream/40 rounded-2xl border border-rosy/20">
                     <div className="text-3xl font-bold text-rosy mb-2">{totalItems - checkedCount}</div>
                     <div className="text-charcoal/70 font-medium">Remaining</div>

@@ -163,9 +163,9 @@ const Auth = ({ onLogin }) => {
                   </p>
                 </div>
 
-                <div className="space-y-4">
-                  <button
-                    onClick={() => setAuthMode('signin')}
+          <div className="space-y-4">
+            <button
+              onClick={() => setAuthMode('signin')}
                     className="w-full py-5 px-8 text-lg font-bold rounded-2xl transition-all duration-300 border-2 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
                     style={{
                       backgroundColor: '#FFB085',
@@ -180,12 +180,12 @@ const Auth = ({ onLogin }) => {
                       e.target.style.backgroundColor = '#FFB085';
                       e.target.style.borderColor = '#FFB085';
                     }}
-                  >
-                    Sign In to Your Account
-                  </button>
+            >
+              Sign In to Your Account
+            </button>
                   
-                  <button
-                    onClick={() => setAuthMode('signup')}
+            <button
+              onClick={() => setAuthMode('signup')}
                     className="w-full py-5 px-8 text-lg font-bold rounded-2xl transition-all duration-300 border-2 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
                     style={{
                       backgroundColor: 'transparent',
@@ -200,9 +200,9 @@ const Auth = ({ onLogin }) => {
                       e.target.style.backgroundColor = 'transparent';
                       e.target.style.color = '#8EB695';
                     }}
-                  >
-                    Create New Account
-                  </button>
+            >
+              Create New Account
+            </button>
                 </div>
 
                 <div className="mt-8 pt-8 border-t-2" style={{borderColor: '#E2E2E2'}}>
@@ -244,7 +244,7 @@ const Auth = ({ onLogin }) => {
                  borderColor: 'rgba(255, 176, 133, 0.2)'
                }}>
             
-            {/* Header */}
+          {/* Header */}
             <div className="p-10 pb-6 text-center">
               <div className="flex justify-center mb-6">
                 <div className="w-16 h-16 rounded-2xl shadow-lg border-2 flex items-center justify-center"
@@ -258,29 +258,29 @@ const Auth = ({ onLogin }) => {
               </div>
               <h2 className="text-4xl font-black mb-3" style={{color: '#2C3A47'}}>
                 Welcome Back
-              </h2>
+            </h2>
               <p className="text-lg" style={{color: '#A0522D'}}>
                 Continue your culinary journey
-              </p>
-            </div>
+            </p>
+          </div>
 
             {/* Form */}
             <div className="px-10 pb-10">
-              <form className="space-y-6" onSubmit={handleSubmit}>
-                <div>
+            <form className="space-y-6" onSubmit={handleSubmit}>
+              <div>
                   <label htmlFor="email" className="block text-sm font-bold mb-3 uppercase tracking-wide" 
                          style={{color: '#2C3A47'}}>Email Address</label>
-                  <div className="relative">
+                <div className="relative">
                     <div className="absolute inset-y-0 left-0 pl-5 flex items-center pointer-events-none">
                       <Mail className="h-5 w-5" style={{color: '#A0522D'}} />
-                    </div>
-                    <input
-                      id="email"
-                      name="email"
-                      type="email"
-                      required
-                      value={formData.email}
-                      onChange={handleInputChange}
+                  </div>
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    required
+                    value={formData.email}
+                    onChange={handleInputChange}
                       className="block w-full pl-14 pr-5 py-4 border-2 rounded-xl focus:outline-none focus:ring-4 text-lg transition-all duration-200"
                       style={{
                         borderColor: '#E2E2E2',
@@ -290,24 +290,24 @@ const Auth = ({ onLogin }) => {
                       onFocus={e => e.target.style.borderColor = '#FFB085'}
                       onBlur={e => e.target.style.borderColor = '#E2E2E2'}
                       placeholder="your@email.com"
-                    />
-                  </div>
+                  />
                 </div>
+              </div>
 
-                <div>
+              <div>
                   <label htmlFor="password" className="block text-sm font-bold mb-3 uppercase tracking-wide" 
                          style={{color: '#2C3A47'}}>Password</label>
-                  <div className="relative">
+                <div className="relative">
                     <div className="absolute inset-y-0 left-0 pl-5 flex items-center pointer-events-none">
                       <Lock className="h-5 w-5" style={{color: '#A0522D'}} />
-                    </div>
-                    <input
-                      id="password"
-                      name="password"
-                      type={showPassword ? 'text' : 'password'}
-                      required
-                      value={formData.password}
-                      onChange={handleInputChange}
+                  </div>
+                  <input
+                    id="password"
+                    name="password"
+                    type={showPassword ? 'text' : 'password'}
+                    required
+                    value={formData.password}
+                    onChange={handleInputChange}
                       className="block w-full pl-14 pr-14 py-4 border-2 rounded-xl focus:outline-none focus:ring-4 text-lg transition-all duration-200"
                       style={{
                         borderColor: '#E2E2E2',
@@ -316,46 +316,46 @@ const Auth = ({ onLogin }) => {
                       }}
                       onFocus={e => e.target.style.borderColor = '#FFB085'}
                       onBlur={e => e.target.style.borderColor = '#E2E2E2'}
-                      placeholder="Enter your password"
-                    />
-                    <button
-                      type="button"
-                      onClick={() => setShowPassword(!showPassword)}
+                    placeholder="Enter your password"
+                  />
+                  <button
+                    type="button"
+                    onClick={() => setShowPassword(!showPassword)}
                       className="absolute inset-y-0 right-0 pr-5 flex items-center"
-                    >
-                      {showPassword ? (
+                  >
+                    {showPassword ? (
                         <EyeOff className="h-5 w-5 transition-colors" style={{color: '#A0522D'}} />
-                      ) : (
+                    ) : (
                         <Eye className="h-5 w-5 transition-colors" style={{color: '#A0522D'}} />
-                      )}
-                    </button>
-                  </div>
+                    )}
+                  </button>
                 </div>
+              </div>
 
                 <div className="flex items-center justify-between pt-2">
-                  <div className="flex items-center">
-                    <input
-                      id="remember-me"
-                      name="remember-me"
-                      type="checkbox"
+                <div className="flex items-center">
+                  <input
+                    id="remember-me"
+                    name="remember-me"
+                    type="checkbox"
                       className="h-4 w-4 rounded border-2"
                       style={{borderColor: '#8EB695', accentColor: '#8EB695'}}
-                    />
+                  />
                     <label htmlFor="remember-me" className="ml-3 block text-sm font-medium" style={{color: '#A0522D'}}>
-                      Remember me
-                    </label>
-                  </div>
-                  <div className="text-sm">
-                    <a href="#" className="font-semibold transition-colors" style={{color: '#8EB695'}}>
-                      Forgot password?
-                    </a>
-                  </div>
+                    Remember me
+                  </label>
                 </div>
+                <div className="text-sm">
+                    <a href="#" className="font-semibold transition-colors" style={{color: '#8EB695'}}>
+                    Forgot password?
+                  </a>
+                </div>
+              </div>
 
                 <div className="pt-4">
-                  <button
-                    type="submit"
-                    disabled={isLoading}
+                <button
+                  type="submit"
+                  disabled={isLoading}
                     className="w-full flex justify-center py-4 px-6 text-lg font-bold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
                     style={{
                       backgroundColor: '#FFB085',
@@ -365,8 +365,8 @@ const Auth = ({ onLogin }) => {
                     onMouseOut={e => !isLoading && (e.target.style.backgroundColor = '#FFB085')}
                   >
                     {isLoading ? 'Signing In...' : 'Sign In'}
-                  </button>
-                </div>
+                </button>
+              </div>
               </form>
 
               <div className="text-center mt-8 pt-6 border-t-2" style={{borderColor: '#E2E2E2'}}>
@@ -412,7 +412,7 @@ const Auth = ({ onLogin }) => {
                  borderColor: 'rgba(142, 182, 149, 0.2)'
                }}>
             
-            {/* Header */}
+          {/* Header */}
             <div className="p-10 pb-6 text-center">
               <div className="flex justify-center mb-6">
                 <div className="w-16 h-16 rounded-2xl shadow-lg border-2 flex items-center justify-center"
@@ -426,29 +426,29 @@ const Auth = ({ onLogin }) => {
               </div>
               <h2 className="text-4xl font-black mb-3" style={{color: '#2C3A47'}}>
                 Join Our Kitchen
-              </h2>
+            </h2>
               <p className="text-lg" style={{color: '#A0522D'}}>
                 Start your professional cooking journey
-              </p>
-            </div>
+            </p>
+          </div>
 
             {/* Form */}
             <div className="px-10 pb-10">
-              <form className="space-y-6" onSubmit={handleSubmit}>
-                <div>
+            <form className="space-y-6" onSubmit={handleSubmit}>
+              <div>
                   <label htmlFor="name" className="block text-sm font-bold mb-3 uppercase tracking-wide" 
                          style={{color: '#2C3A47'}}>Full Name</label>
-                  <div className="relative">
+                <div className="relative">
                     <div className="absolute inset-y-0 left-0 pl-5 flex items-center pointer-events-none">
                       <User className="h-5 w-5" style={{color: '#A0522D'}} />
-                    </div>
-                    <input
-                      id="name"
-                      name="name"
-                      type="text"
-                      required
-                      value={formData.name}
-                      onChange={handleInputChange}
+                  </div>
+                  <input
+                    id="name"
+                    name="name"
+                    type="text"
+                    required
+                    value={formData.name}
+                    onChange={handleInputChange}
                       className="block w-full pl-14 pr-5 py-4 border-2 rounded-xl focus:outline-none focus:ring-4 text-lg transition-all duration-200"
                       style={{
                         borderColor: '#E2E2E2',
@@ -458,24 +458,24 @@ const Auth = ({ onLogin }) => {
                       onFocus={e => e.target.style.borderColor = '#8EB695'}
                       onBlur={e => e.target.style.borderColor = '#E2E2E2'}
                       placeholder="Your full name"
-                    />
-                  </div>
+                  />
                 </div>
+              </div>
 
-                <div>
+              <div>
                   <label htmlFor="email" className="block text-sm font-bold mb-3 uppercase tracking-wide" 
                          style={{color: '#2C3A47'}}>Email Address</label>
-                  <div className="relative">
+                <div className="relative">
                     <div className="absolute inset-y-0 left-0 pl-5 flex items-center pointer-events-none">
                       <Mail className="h-5 w-5" style={{color: '#A0522D'}} />
-                    </div>
-                    <input
-                      id="email"
-                      name="email"
-                      type="email"
-                      required
-                      value={formData.email}
-                      onChange={handleInputChange}
+                  </div>
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    required
+                    value={formData.email}
+                    onChange={handleInputChange}
                       className="block w-full pl-14 pr-5 py-4 border-2 rounded-xl focus:outline-none focus:ring-4 text-lg transition-all duration-200"
                       style={{
                         borderColor: '#E2E2E2',
@@ -485,24 +485,24 @@ const Auth = ({ onLogin }) => {
                       onFocus={e => e.target.style.borderColor = '#8EB695'}
                       onBlur={e => e.target.style.borderColor = '#E2E2E2'}
                       placeholder="your@email.com"
-                    />
-                  </div>
+                  />
                 </div>
+              </div>
 
-                <div>
+              <div>
                   <label htmlFor="password" className="block text-sm font-bold mb-3 uppercase tracking-wide" 
                          style={{color: '#2C3A47'}}>Password</label>
-                  <div className="relative">
+                <div className="relative">
                     <div className="absolute inset-y-0 left-0 pl-5 flex items-center pointer-events-none">
                       <Lock className="h-5 w-5" style={{color: '#A0522D'}} />
-                    </div>
-                    <input
-                      id="password"
-                      name="password"
-                      type={showPassword ? 'text' : 'password'}
-                      required
-                      value={formData.password}
-                      onChange={handleInputChange}
+                  </div>
+                  <input
+                    id="password"
+                    name="password"
+                    type={showPassword ? 'text' : 'password'}
+                    required
+                    value={formData.password}
+                    onChange={handleInputChange}
                       className="block w-full pl-14 pr-14 py-4 border-2 rounded-xl focus:outline-none focus:ring-4 text-lg transition-all duration-200"
                       style={{
                         borderColor: '#E2E2E2',
@@ -512,35 +512,35 @@ const Auth = ({ onLogin }) => {
                       onFocus={e => e.target.style.borderColor = '#8EB695'}
                       onBlur={e => e.target.style.borderColor = '#E2E2E2'}
                       placeholder="Create a strong password"
-                    />
-                    <button
-                      type="button"
-                      onClick={() => setShowPassword(!showPassword)}
+                  />
+                  <button
+                    type="button"
+                    onClick={() => setShowPassword(!showPassword)}
                       className="absolute inset-y-0 right-0 pr-5 flex items-center"
-                    >
-                      {showPassword ? (
+                  >
+                    {showPassword ? (
                         <EyeOff className="h-5 w-5 transition-colors" style={{color: '#A0522D'}} />
-                      ) : (
+                    ) : (
                         <Eye className="h-5 w-5 transition-colors" style={{color: '#A0522D'}} />
-                      )}
-                    </button>
-                  </div>
+                    )}
+                  </button>
                 </div>
+              </div>
 
-                <div>
+              <div>
                   <label htmlFor="confirmPassword" className="block text-sm font-bold mb-3 uppercase tracking-wide" 
                          style={{color: '#2C3A47'}}>Confirm Password</label>
-                  <div className="relative">
+                <div className="relative">
                     <div className="absolute inset-y-0 left-0 pl-5 flex items-center pointer-events-none">
                       <Lock className="h-5 w-5" style={{color: '#A0522D'}} />
-                    </div>
-                    <input
-                      id="confirmPassword"
-                      name="confirmPassword"
-                      type={showConfirmPassword ? 'text' : 'password'}
-                      required
-                      value={formData.confirmPassword}
-                      onChange={handleInputChange}
+                  </div>
+                  <input
+                    id="confirmPassword"
+                    name="confirmPassword"
+                    type={showConfirmPassword ? 'text' : 'password'}
+                    required
+                    value={formData.confirmPassword}
+                    onChange={handleInputChange}
                       className="block w-full pl-14 pr-14 py-4 border-2 rounded-xl focus:outline-none focus:ring-4 text-lg transition-all duration-200"
                       style={{
                         borderColor: '#E2E2E2',
@@ -549,26 +549,26 @@ const Auth = ({ onLogin }) => {
                       }}
                       onFocus={e => e.target.style.borderColor = '#8EB695'}
                       onBlur={e => e.target.style.borderColor = '#E2E2E2'}
-                      placeholder="Confirm your password"
-                    />
-                    <button
-                      type="button"
-                      onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                    placeholder="Confirm your password"
+                  />
+                  <button
+                    type="button"
+                    onClick={() => setShowConfirmPassword(!showConfirmPassword)}
                       className="absolute inset-y-0 right-0 pr-5 flex items-center"
-                    >
-                      {showConfirmPassword ? (
+                  >
+                    {showConfirmPassword ? (
                         <EyeOff className="h-5 w-5 transition-colors" style={{color: '#A0522D'}} />
-                      ) : (
+                    ) : (
                         <Eye className="h-5 w-5 transition-colors" style={{color: '#A0522D'}} />
-                      )}
-                    </button>
-                  </div>
+                    )}
+                  </button>
                 </div>
+              </div>
 
                 <div className="pt-4">
-                  <button
-                    type="submit"
-                    disabled={isLoading}
+                <button
+                  type="submit"
+                  disabled={isLoading}
                     className="w-full flex justify-center py-4 px-6 text-lg font-bold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
                     style={{
                       backgroundColor: '#8EB695',
@@ -578,8 +578,8 @@ const Auth = ({ onLogin }) => {
                     onMouseOut={e => !isLoading && (e.target.style.backgroundColor = '#8EB695')}
                   >
                     {isLoading ? 'Creating Account...' : 'Create Account'}
-                  </button>
-                </div>
+                </button>
+              </div>
               </form>
 
               <div className="text-center mt-8 pt-6 border-t-2" style={{borderColor: '#E2E2E2'}}>

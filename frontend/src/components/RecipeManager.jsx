@@ -149,38 +149,38 @@ const RecipeManager = () => {
             </div>
             <div className="text-charcoal/70">Avg Cook Time</div>
           </div>
-        </div>
+      </div>
 
         {/* Search and Filter Section */}
         <div className="bg-white/80 backdrop-blur-lg rounded-3xl shadow-xl p-8 mb-12 border border-peachy/20">
           <div className="flex flex-col lg:flex-row gap-6">
-            <div className="flex-1 relative">
+          <div className="flex-1 relative">
               <Search className="absolute left-6 top-1/2 transform -translate-y-1/2 h-5 w-5 text-cinnamon" />
-              <input
-                type="text"
+            <input
+              type="text"
                 placeholder="Search your recipes..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
                 className="w-full pl-14 pr-6 py-4 bg-cream/60 border border-peachy/30 rounded-full text-charcoal placeholder-charcoal/60 focus:outline-none focus:ring-2 focus:ring-cinnamon/50 focus:border-cinnamon transition-all"
-              />
-            </div>
+            />
+          </div>
             <div className="flex items-center gap-4">
               <Filter className="h-5 w-5 text-cinnamon" />
-              <select
-                value={selectedDifficulty}
-                onChange={(e) => setSelectedDifficulty(e.target.value)}
+            <select
+              value={selectedDifficulty}
+              onChange={(e) => setSelectedDifficulty(e.target.value)}
                 className="px-6 py-4 bg-cream/60 border border-peachy/30 rounded-full text-charcoal focus:outline-none focus:ring-2 focus:ring-cinnamon/50 focus:border-cinnamon transition-all"
-              >
-                <option value="All">All Difficulties</option>
-                <option value="Easy">Easy</option>
-                <option value="Medium">Medium</option>
-                <option value="Hard">Hard</option>
-              </select>
-            </div>
+            >
+              <option value="All">All Difficulties</option>
+              <option value="Easy">Easy</option>
+              <option value="Medium">Medium</option>
+              <option value="Hard">Hard</option>
+            </select>
           </div>
         </div>
+      </div>
 
-        {/* Loading State */}
+      {/* Loading State */}
         {loading && (
           <div className="text-center py-12">
             <div className="inline-flex items-center gap-3 bg-white/70 backdrop-blur-md rounded-full px-6 py-3 border border-peachy/30">
@@ -190,39 +190,39 @@ const RecipeManager = () => {
           </div>
         )}
 
-        {/* Recipe Grid */}
+      {/* Recipe Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredRecipes.map((recipe) => (
+        {filteredRecipes.map((recipe) => (
             <div key={recipe._id || recipe.id} className="group bg-white/80 backdrop-blur-lg rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-peachy/20 hover:border-cinnamon/40 hover:-translate-y-2">
               {/* Recipe Image */}
               <div className="relative h-52 overflow-hidden">
-                {recipe.image ? (
-                  <img
-                    src={recipe.image}
-                    alt={recipe.title}
+              {recipe.image ? (
+                <img
+                  src={recipe.image}
+                  alt={recipe.title}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                  />
-                ) : (
+                />
+              ) : (
                   <div className="w-full h-full bg-gradient-to-br from-peachy/30 to-sage/30 flex items-center justify-center">
                     <Image className="h-16 w-16 text-cinnamon/40" />
-                  </div>
-                )}
+                </div>
+              )}
                 
                 {/* Action Buttons */}
                 <div className="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <button
-                    onClick={() => handleEditRecipe(recipe)}
+                <button
+                  onClick={() => handleEditRecipe(recipe)}
                     className="p-3 bg-white/90 backdrop-blur-sm rounded-full shadow-lg hover:bg-sage hover:text-white transition-all"
-                  >
-                    <Edit className="h-4 w-4" />
-                  </button>
-                  <button
-                    onClick={() => handleDeleteRecipe(recipe._id || recipe.id)}
+                >
+                  <Edit className="h-4 w-4" />
+                </button>
+                <button
+                  onClick={() => handleDeleteRecipe(recipe._id || recipe.id)}
                     className="p-3 bg-white/90 backdrop-blur-sm rounded-full shadow-lg hover:bg-rosy hover:text-white transition-all"
-                  >
-                    <Trash2 className="h-4 w-4" />
-                  </button>
-                </div>
+                >
+                  <Trash2 className="h-4 w-4" />
+                </button>
+              </div>
 
                 {/* Difficulty Badge */}
                 <div className="absolute bottom-4 left-4">
@@ -252,26 +252,26 @@ const RecipeManager = () => {
                     <span>{(recipe.prepTime || 0) + (recipe.cookTime || 0)}m</span>
                   </div>
                   <div className="flex items-center gap-1">
-                    <Users className="h-4 w-4" />
+                  <Users className="h-4 w-4" />
                     <span>{recipe.servings}</span>
-                  </div>
-                  {recipe.calories && (
-                    <div className="font-medium text-cinnamon">
-                      {recipe.calories} cal
-                    </div>
-                  )}
                 </div>
+                {recipe.calories && (
+                    <div className="font-medium text-cinnamon">
+                    {recipe.calories} cal
+                  </div>
+                )}
+              </div>
 
                 {/* Tags */}
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {recipe.tags.slice(0, 2).map((tag, index) => (
-                    <span
-                      key={index}
+              <div className="flex flex-wrap gap-2 mb-4">
+                {recipe.tags.slice(0, 2).map((tag, index) => (
+                  <span
+                    key={index}
                       className="px-3 py-1 bg-cream/60 text-charcoal/70 rounded-full text-xs font-medium border border-peachy/20"
-                    >
-                      {tag}
-                    </span>
-                  ))}
+                  >
+                    {tag}
+                  </span>
+                ))}
                 </div>
 
                 {/* Rating */}
@@ -280,8 +280,8 @@ const RecipeManager = () => {
                     <Star className="h-4 w-4 text-biscuit fill-current" />
                     <span className="text-sm font-medium text-charcoal">
                       4.{Math.floor(Math.random() * 9) + 1}
-                    </span>
-                  </div>
+                </span>
+              </div>
                   <button className="text-sm font-medium text-cinnamon hover:text-sage transition-colors">
                     View Recipe →
                   </button>
@@ -289,7 +289,7 @@ const RecipeManager = () => {
               </div>
             </div>
           ))}
-        </div>
+          </div>
 
         {/* Floating Add Button */}
         <button
